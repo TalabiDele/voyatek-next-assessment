@@ -5,8 +5,6 @@ async function fetchUsers() {
 		console.log(res.data)
 		return res.data
 	})
-
-	// console.log()
 }
 
 export { fetchUsers }
