@@ -10,7 +10,7 @@ const TableHeader = () => {
 
 	return (
 		<div>
-			<AddUser newUser={newUser} setNewUser={setNewUser} />
+			{newUser && <AddUser newUser={newUser} setNewUser={setNewUser} />}
 
 			<div className=' mt-[1rem] bg-[#fff] p-[1rem] rounded-t-md flex justify-between'>
 				<div className=' flex gap-2'>
