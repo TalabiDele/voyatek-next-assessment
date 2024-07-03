@@ -1,29 +1,30 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import { HiOutlineChevronUpDown } from 'react-icons/hi2'
+import TableHeader from './TableHeader'
+import { fetchUsers } from '@/utils/requests'
+import axios from 'axios'
 
 const Table = () => {
+	const [allUsers, setAllUsers] = useState(null)
+
+	useEffect(() => {
+		const getUsers = async () => {
+			axios.get(`${process.env.NEXT_PUBLIC_API_URL}`).then((res) => {
+				console.log(res.data)
+				setAllUsers(res.data)
+			})
+		}
+
+		getUsers()
+	}, [])
+
 	return (
 		<div>
-			{/* <table class='table-fixed'>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Email Address</th>
-						<th>Role</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-						<td>Malcolm Lockyer</td>
-						<td>1961</td>
-						<td>1961</td>
-					</tr>
-				</tbody>
-			</table> */}
+			<TableHeader />
 
-			<div className=' grid grid-cols-4 mt-[1rem] text-[#1D2739]'>
+			<div className=' grid grid-cols-4 mt-[1rem] text-[#1D2739] px-[3rem] py-[1rem]'>
 				<div className=' flex items-center text-sm'>
 					Name <HiOutlineChevronUpDown />
 				</div>
@@ -38,12 +39,14 @@ const Table = () => {
 				</div>
 			</div>
 
-			<div className=' grid grid-cols-4 mt-[1rem] text-[#1D2739]'>
-				<div className=' flex items-center text-sm'>Taiwo Isaac</div>
-				<div className=' flex items-center text-sm'>taiwoisaac@email.com</div>
-				<div className=' flex items-center text-sm'>Administrator</div>
-				<div className=' flex items-center text-sm'>Edit</div>
-			</div>
+			{allUsers?.map((user) => (
+				<div className=' grid grid-cols-4 text-[#1D2739] bg-[#fff] py-[1rem] px-[3rem] border-b border-[#cbd5e1a9]'>
+					<div className=' flex items-center text-sm'>{user?.fullName}</div>
+					<div className=' flex items-center text-sm'>{user?.email}</div>
+					<div className=' flex items-center text-sm'>{user?.role}</div>
+					<div className=' flex items-center text-sm'>Edit</div>
+				</div>
+			))}
 		</div>
 	)
 }
