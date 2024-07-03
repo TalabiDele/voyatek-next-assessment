@@ -58,7 +58,7 @@ const SideNav = () => {
 	]
 
 	return (
-		<div className=' bg-[#fff] w-[15vw] rounded-md h-[80vh]'>
+		<div className=' bg-[#fff] w-[15vw] rounded-md h-[80vh] fixed top-[7rem] left-[3rem]'>
 			<div className='  p-[1rem] grid'>
 				<h1 className=' font-bold text-[#334155] mb-[1rem]'>Settings</h1>
 				<ul className=' flex flex-col h-[40vh] justify-between'>

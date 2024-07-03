@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body>
 				<TopNav />
-				<div className=' fixed top-[7rem] flex w-[80vw] mx-auto left-[3rem] justify-between'>
-					<SideNav />
-					<div className=' w-[60vw]'>
-						<main className={inter.className}>{children}</main>
-					</div>
+				{/* <div className=' fixed top-[7rem] flex w-[80vw] mx-auto left-[3rem] justify-between'> */}
+				<SideNav />
+				<div className=' w-[60vw] h-[80vh] pb-[10rem]'>
+					<main className={inter.className}>{children}</main>
 				</div>
+				{/* </div> */}
 			</body>
 		</html>
 	)
