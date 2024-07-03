@@ -7,8 +7,8 @@ const AddUser = ({ newUser, setNewUser }) => {
 		<div
 			className={`${
 				!newUser && 'h-[0rem] w-[0rem]'
-			} bg-[#3440548a] fixed top-0 bottom-0 left-0 right-0 z-[200] flex items-center justify-center h-[100vh] w-[100vw] transition-all ease-in-out duration-75`}
-			style={{ zIndex: '100', position: 'fixed' }}
+			} bg-[#3440548a] fixed top-0 bottom-0 left-0 right-0 z-[1000] flex items-center justify-center h-[100vh] w-[100vw] transition-all ease-in-out duration-75`}
+			style={{ zIndex: '1000', position: 'fixed' }}
 		>
 			<div
 				className={`${
