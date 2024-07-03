@@ -7,12 +7,13 @@ const AddUser = ({ newUser, setNewUser }) => {
 		<div
 			className={`${
 				!newUser && 'h-[0rem] w-[0rem]'
-			} bg-[#3440548a] fixed top-0 bottom-0 left-0 right-0 z-[100] flex items-center justify-center h-[100vh] w-[100vw] transition-all ease-in-out duration-75`}
+			} bg-[#3440548a] fixed top-0 bottom-0 left-0 right-0 z-[200] flex items-center justify-center h-[100vh] w-[100vw] transition-all ease-in-out duration-75`}
+			style={{ zIndex: '100', position: 'fixed' }}
 		>
 			<div
 				className={`${
 					!newUser && 'h-[0rem] w-[0rem]'
-				} bg-[#fff] w-[40vw] mx-auto rounded-md p-[1rem] relative transition-all ease-in-out duration-75 delay-75`}
+				} bg-[#fff] w-[40vw] mx-auto rounded-md p-[1rem] relative transition-all ease-in-out duration-75 delay-75 z-[100]`}
 			>
 				<div className={`${!newUser && 'hidden'} relative`}>
 					<p

@@ -44,7 +44,16 @@ const Table = () => {
 					<div className=' grid grid-cols-4 text-[#1D2739] bg-[#fff] py-[1rem] px-[3rem] border-b border-[#cbd5e1a9] text-sm '>
 						<div className=' flex items-center text-sm'>{user?.fullName}</div>
 						<div className=' flex items-center text-sm'>{user?.email}</div>
-						<div className=' flex items-center text-sm'>{user?.role}</div>
+						<div
+							className={`${
+								user?.role === 'manager' && ' text-[#0F973D] bg-[#E7F6EC]'
+							} ${user?.role === 'admin' && 'text-[#0D6EFD] bg-[#F0F6FE]'} ${
+								user?.role === 'sales representative' &&
+								'text-[#F58A07] bg-[#FEF4E6]'
+							} flex items-center justify-center text-sm capitalize rounded-xl p-[0.3rem] text-center w-[10rem]`}
+						>
+							{user?.role}
+						</div>
 						<div className=' flex items-center text-sm font-medium gap-[1rem]'>
 							<p className=' text-[#0D6EFD] text-sm cursor-pointer'>Edit</p>
 							<p className=' text-sm cursor-pointer'>Remove</p>
