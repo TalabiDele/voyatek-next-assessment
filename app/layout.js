@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body>
 				<div className=' relative'>
-					<TopNav />
+					<div className=' relative z-[100]'>
+						<TopNav />
+					</div>
 					<SideNav />
 					<div className=' w-[60vw] h-[80vh] pb-[10rem]'>
 						<main className={inter.className}>{children}</main>

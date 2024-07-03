@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { FormBtn } from './Buttons'
 import { GrFormViewHide, GrFormView } from 'react-icons/gr'
 import axios from 'axios'
+import { fetchUsers } from '@/utils/requests'
 
 const NewUserForm = ({ setNewUser }) => {
 	const [email, setEmail] = useState('')
@@ -30,6 +31,8 @@ const NewUserForm = ({ setNewUser }) => {
 				setRole('')
 				setPassword('')
 				console.log(res.data)
+
+				fetchUsers()
 			})
 	}
 
